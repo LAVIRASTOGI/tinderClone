@@ -6,6 +6,7 @@ const connectDB = require("./config/database");
 const authRouter = require("./routes/auth");
 const profileRouter = require("./routes/profile");
 const requestRouter = require("./routes/request");
+const userRouter = require("./routes/user");
 
 //convert JSon object to the js object and add in req again
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(cookieParser());
 app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/request", requestRouter);
+app.use("/user", userRouter);
 
 // // // code starts matching route from up to down in order
 // // // // always this route will run (overrides other route)
